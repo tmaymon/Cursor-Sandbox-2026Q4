@@ -45,7 +45,8 @@ Players take turns placing marks on a 5×5 board. The first player to get three 
 
 **In**
 
-- Browser page
+- Code built and run locally
+- Opened and played in a web browser
 - Two humans taking turns on the same screen
 - Click or tap a cell to place a mark
 - Win and draw detection
@@ -58,19 +59,27 @@ Players take turns placing marks on a 5×5 board. The first player to get three 
 - Highlighting the winning line
 - Online multiplayer
 - Animations or sound
+- Hosting or deploying the game to a remote server
+
+## How we will build and run it
+
+- Write and build the game **locally** (files on this machine; no remote host required for v1)
+- **Run it in a web browser** by opening the local page (a simple local server is fine if the browser needs one)
+- Success for a run: the 5×5 board appears in the browser and two people can play without deploying anywhere
 
 ## Later implementation order (when we start coding)
 
-1. Draw an empty 5×5 board in the browser
-2. Handle a click on an empty cell and place X or O
-3. Switch turns after a valid move
-4. Detect win and draw
-5. Show the result and disable further moves
-6. Add a restart control that clears the board and lets X start
+1. Set up a local page and open it in the browser
+2. Draw an empty 5×5 board in the browser
+3. Handle a click on an empty cell and place X or O
+4. Switch turns after a valid move
+5. Detect win and draw
+6. Show the result and disable further moves
+7. Add a restart control that clears the board and lets X start
 
 ## Success
 
-The first version is done when two people can play a full game in the browser, see a correct winner or draw, and start over without refreshing the page.
+The first version is done when the game is built locally, opened in a browser, and two people can play a full game, see a correct winner or draw, and start over without refreshing the page.
 
 ## Verified
 
@@ -81,5 +90,5 @@ The first version is done when two people can play a full game in the browser, s
 - The game ends on the first 3-in-a-row, even if the board is not full.
 - First version is two humans on the same screen; no computer opponent.
 - After Restart, X always goes first.
-- It will run in the browser.
+- It will be built locally and run in the browser.
 - v1 is only board, turns, win/draw, and restart — nothing else.
