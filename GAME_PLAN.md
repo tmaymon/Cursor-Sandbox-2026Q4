@@ -1,6 +1,6 @@
 # Tic Tac Toe — Game Plan
 
-A simple two-player game on a 5×5 grid. This document is a plan only; no game code yet.
+A simple two-player game on a 5×5 grid, played in the browser. This document is a plan only; no game code yet.
 
 ## Goal
 
@@ -8,8 +8,9 @@ Players take turns placing marks on a 5×5 board. The first player to get three 
 
 ## Players
 
-- Two players: **X** and **O**
-- X always goes first
+- Two humans on the same screen: **X** and **O**
+- No computer opponent in the first version
+- X always goes first, including after Restart
 - Players alternate turns
 - A player may place a mark only in an empty cell
 
@@ -18,6 +19,7 @@ Players take turns placing marks on a 5×5 board. The first player to get three 
 - A 5×5 grid (25 cells)
 - Each cell is empty, X, or O
 - The board starts empty
+- Edges wrap around: a line that goes off one edge continues on the opposite edge (horizontal, vertical, and both diagonals)
 
 ## Rules
 
@@ -26,14 +28,15 @@ Players take turns placing marks on a 5×5 board. The first player to get three 
 3. A **win** is three of the same mark in a consecutive line, anywhere on the board:
    - horizontal (in any row)
    - vertical (in any column)
-   - diagonal (either direction)
-   The three marks must be adjacent with no gaps. `X X X` wins; `X _ X X` does not. The three marks do not need to span the full board.
-4. A **draw** happens when all 25 cells are filled and nobody has won.
-5. After a win or draw, the game ends. Players can start a new game.
+   - diagonal (usual 45° neighbor lines only, either direction)
+   The three marks must be adjacent with no gaps. `X X X` wins; `X _ X X` does not. Four or five in a row also wins, because it contains three. The three marks do not need to span the full board. A line may wrap around opposite edges.
+4. The game **ends on the first 3-in-a-row**. The player who just completed it wins immediately, even if cells are still empty. A game can end as early as X’s third move. A full-board draw is possible but rare.
+5. A **draw** happens when all 25 cells are filled and nobody has won.
+6. After a win or draw, no further marks can be placed. Players can start a new game. Restart clears the board and X goes first.
 
 ## What the player should see
 
-- The 5×5 board
+- A browser page with the 5×5 board
 - Whose turn it is (X or O)
 - A clear result when the game ends: “X wins”, “O wins”, or “Draw”
 - A way to start a new game
@@ -42,31 +45,41 @@ Players take turns placing marks on a 5×5 board. The first player to get three 
 
 **In**
 
+- Browser page
 - Two humans taking turns on the same screen
 - Click or tap a cell to place a mark
-- Win and draw detection
-- Restart
+- Win and draw detection (including wrap-around lines)
+- Restart (X goes first)
 
 **Out (for later, if we want it)**
 
 - Computer opponent
 - Score history across games
+- Highlighting the winning line
 - Online multiplayer
 - Animations or sound
 
 ## Later implementation order (when we start coding)
 
-1. Draw an empty 5×5 board
+1. Draw an empty 5×5 board in the browser
 2. Handle a click on an empty cell and place X or O
 3. Switch turns after a valid move
-4. Detect win and draw
+4. Detect win (including wrap-around) and draw
 5. Show the result and disable further moves
-6. Add a restart control
+6. Add a restart control that clears the board and lets X start
 
 ## Success
 
-The first version is done when two people can play a full game, see a correct winner or draw, and start over without refreshing the page.
+The first version is done when two people can play a full game in the browser, see a correct winner or draw, and start over without refreshing the page.
 
 ## Verified
 
 - Three in a row means three **adjacent** marks with no gaps.
+- Four or five in a row still wins, because it contains three.
+- Lines **wrap around** opposite edges.
+- Diagonals are only the usual 45° neighbor lines, not other shapes.
+- The game ends on the first 3-in-a-row, even if the board is not full.
+- First version is two humans on the same screen; no computer opponent.
+- After Restart, X always goes first.
+- It will run in the browser.
+- v1 is only board, turns, win/draw, and restart — nothing else.
