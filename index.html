@@ -1,0 +1,73 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <title>Chat — Plan mode</title>
+    <link rel="stylesheet" href="css/app.css" />
+  </head>
+  <body>
+    <div class="app">
+      <header class="topbar">
+        <div class="brand">
+          <span class="logo" aria-hidden="true"></span>
+          <div>
+            <h1>Sandbox chat</h1>
+            <p class="subtitle" id="mode-banner">Agent can edit files as it works.</p>
+          </div>
+        </div>
+        <button type="button" class="ghost" id="new-chat">New chat</button>
+      </header>
+
+      <main class="thread" id="thread" aria-live="polite">
+        <section class="empty" id="empty">
+          <p class="eyebrow" id="empty-eyebrow">Chat options</p>
+          <h2 id="empty-title">What should we do?</h2>
+          <p id="empty-copy">
+            Pick a mode under the input. <strong>Plan</strong> is now in the list —
+            it asks a few questions, then writes a reviewable plan before any code.
+          </p>
+          <div class="chips" id="chips"></div>
+        </section>
+      </main>
+
+      <div class="suggest" id="plan-suggest" hidden>
+        <span>This looks like a larger change.</span>
+        <button type="button" id="use-plan">Switch to Plan</button>
+      </div>
+
+      <form class="composer" id="composer">
+        <label class="sr-only" for="prompt">Message</label>
+        <textarea
+          id="prompt"
+          rows="2"
+          autocomplete="off"
+          placeholder="Ask Agent to do anything…"
+        ></textarea>
+        <div class="composer-bar">
+          <div class="mode-wrap">
+            <button
+              type="button"
+              class="mode-btn"
+              id="mode-btn"
+              data-testid="chat-options"
+              aria-haspopup="listbox"
+              aria-expanded="false"
+              aria-controls="mode-menu"
+            >
+              <span class="mode-dot" id="mode-dot"></span>
+              <span id="mode-label">Agent</span>
+              <svg viewBox="0 0 12 12" width="12" height="12" aria-hidden="true">
+                <path d="M3 4.5 6 8l3-3.5" fill="none" stroke="currentColor" stroke-width="1.4" />
+              </svg>
+            </button>
+            <ul class="mode-menu" id="mode-menu" role="listbox" hidden></ul>
+          </div>
+          <p class="hint">Shift+Tab rotates chat options</p>
+          <button type="submit" class="send" id="send">Send</button>
+        </div>
+      </form>
+    </div>
+    <script type="module" src="js/ui.js"></script>
+  </body>
+</html>
