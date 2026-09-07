@@ -49,6 +49,7 @@ Players take turns placing marks on a 5×5 board. The first player to get three 
 - Opened and played in a web browser
 - Two humans taking turns on the same screen
 - Click or tap a cell to place a mark
+- Water-drop sound when X is placed, drum sound when O is placed
 - Win and draw detection
 - Restart (X goes first)
 
@@ -58,7 +59,7 @@ Players take turns placing marks on a 5×5 board. The first player to get three 
 - Score history across games
 - Highlighting the winning line
 - Online multiplayer
-- Animations or sound
+- Animations
 - Hosting or deploying the game to a remote server
 
 ## How we will build and run it

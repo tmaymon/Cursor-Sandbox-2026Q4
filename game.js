@@ -11,6 +11,8 @@
   const boardEl = document.getElementById("board");
   const statusEl = document.getElementById("status");
   const restartEl = document.getElementById("restart");
+  const soundX = document.getElementById("sound-x");
+  const soundO = document.getElementById("sound-o");
 
   let board = emptyBoard();
   let currentPlayer = "X";
@@ -93,6 +95,7 @@
     }
 
     board[row][col] = currentPlayer;
+    playMoveSound(currentPlayer);
 
     if (hasWinFrom(row, col)) {
       gameOver = true;
@@ -111,6 +114,16 @@
     currentPlayer = currentPlayer === "X" ? "O" : "X";
     setStatus(`${currentPlayer}’s turn`, false);
     render();
+  }
+
+  function playMoveSound(player) {
+    const sound = player === "X" ? soundX : soundO;
+    sound.pause();
+    sound.currentTime = 0;
+    const play = sound.play();
+    if (play) {
+      play.catch(() => {});
+    }
   }
 
   function restart() {
