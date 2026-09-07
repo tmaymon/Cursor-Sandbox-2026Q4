@@ -4,7 +4,7 @@ A simple two-player game on a 5×5 grid. This document is a plan only; no game c
 
 ## Goal
 
-Players take turns placing marks on a 5×5 board. The first player to get five of their marks in a row (horizontal, vertical, or diagonal) wins. If the board fills with no winner, the game is a draw.
+Players take turns placing marks on a 5×5 board. The first player to get three of their marks in a row (horizontal, vertical, or diagonal) wins. If the board fills with no winner, the game is a draw.
 
 ## Players
 
@@ -23,10 +23,11 @@ Players take turns placing marks on a 5×5 board. The first player to get five o
 
 1. On a turn, the current player chooses one empty cell and places their mark.
 2. After each move, check for a win or a draw.
-3. A **win** is five of the same mark in a line:
-   - any of the 5 rows
-   - any of the 5 columns
-   - either of the 2 full diagonals
+3. A **win** is three of the same mark in a consecutive line, anywhere on the board:
+   - horizontal (in any row)
+   - vertical (in any column)
+   - diagonal (either direction)
+   The three marks do not need to span the full board.
 4. A **draw** happens when all 25 cells are filled and nobody has won.
 5. After a win or draw, the game ends. Players can start a new game.
 
