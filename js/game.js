@@ -84,7 +84,8 @@ export class Game {
     this.rocks = [];
     this.seekers = [];
     this.particles = [];
-    for (let i = 0; i < 8; i++) this._spawnMote();
+    for (let i = 0; i < 4; i++) this._spawnMote(55, 150);
+    for (let i = 0; i < 5; i++) this._spawnMote();
     for (let i = 0; i < 4; i++) this._spawnRock(0.55);
     this.events.push({ type: "start" });
   }
@@ -106,12 +107,12 @@ export class Game {
     return { x: Math.cos(a) * r, y: Math.sin(a) * r };
   }
 
-  _spawnMote() {
-    const p = this._ringPoint(70, ARENA_RADIUS - 46);
+  _spawnMote(minR = 70, maxR = ARENA_RADIUS - 46) {
+    const p = this._ringPoint(minR, maxR);
     this.motes.push({
       x: p.x,
       y: p.y,
-      r: 7.5,
+      r: 10,
       phase: this.rng() * Math.PI * 2,
     });
   }
@@ -355,18 +356,18 @@ export class Game {
     const p = this.player;
     for (let i = this.motes.length - 1; i >= 0; i--) {
       const m = this.motes[i];
-      const d = dist(p.x, p.y, m.x, m.y);
-      if (d < 54) {
-        const pull = (54 - d) * 4.5;
+        const d = dist(p.x, p.y, m.x, m.y);
+      if (d < 78) {
+        const pull = (78 - d) * 6.5;
         const inv = 1 / (d || 1);
         m.x += (p.x - m.x) * inv * pull * 0.016;
         m.y += (p.y - m.y) * inv * pull * 0.016;
       }
-      if (!circlesOverlap(p.x, p.y, p.r, m.x, m.y, m.r + 2)) continue;
+      if (!circlesOverlap(p.x, p.y, p.r + 6, m.x, m.y, m.r + 4)) continue;
       const pts = collectScore(p.combo);
       this.score += pts;
       this.motesCollected += 1;
-      p.light = clamp(p.light + 13.5, 0, 100);
+      p.light = clamp(p.light + 16, 0, 100);
       p.combo += 1;
       p.comboT = 2.6;
       this._popup(m.x, m.y, `+${pts}`, "#ffe08a");

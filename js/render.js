@@ -164,14 +164,14 @@ export class Renderer {
       ctx.globalAlpha = vis;
       ctx.translate(m.x, m.y);
       ctx.shadowColor = COLORS.mote;
-      ctx.shadowBlur = 16;
+      ctx.shadowBlur = 22;
       ctx.fillStyle = COLORS.mote;
       ctx.beginPath();
-      ctx.arc(0, 0, m.r * pulse * 0.45, 0, Math.PI * 2);
+      ctx.arc(0, 0, m.r * pulse * 0.5, 0, Math.PI * 2);
       ctx.fill();
-      ctx.globalAlpha = vis * 0.35;
+      ctx.globalAlpha = vis * 0.42;
       ctx.beginPath();
-      ctx.arc(0, 0, m.r * pulse, 0, Math.PI * 2);
+      ctx.arc(0, 0, m.r * pulse * 1.15, 0, Math.PI * 2);
       ctx.fill();
       ctx.restore();
     }

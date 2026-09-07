@@ -16,6 +16,7 @@ const overlayTitle = document.getElementById("overlay-title");
 const overlayTag = document.getElementById("overlay-tag");
 const overlayStats = document.getElementById("overlay-stats");
 const overlayHelp = document.getElementById("overlay-help");
+const hiscoreLine = document.getElementById("hiscore-line");
 const primaryBtn = document.getElementById("primary-btn");
 const secondaryBtn = document.getElementById("secondary-btn");
 const hiScoreEls = document.querySelectorAll("[data-hiscore]");
@@ -73,14 +74,18 @@ function syncOverlay() {
     overlayTitle.textContent = "Lumen Drift";
     overlayTag.textContent = "Your light is all that remains.";
     overlayStats.hidden = true;
+    overlayStats.innerHTML = "";
     overlayHelp.hidden = false;
+    hiscoreLine.hidden = false;
     primaryBtn.textContent = "Begin";
     secondaryBtn.hidden = true;
   } else if (game.state === State.PAUSED) {
     overlayTitle.textContent = "Paused";
     overlayTag.textContent = "The nebula holds still.";
     overlayStats.hidden = true;
+    overlayStats.innerHTML = "";
     overlayHelp.hidden = true;
+    hiscoreLine.hidden = true;
     primaryBtn.textContent = "Resume";
     secondaryBtn.hidden = false;
     secondaryBtn.textContent = "Restart";
@@ -91,6 +96,7 @@ function syncOverlay() {
       : "Collect motes. Stay in the bloom.";
     overlayStats.hidden = false;
     overlayHelp.hidden = true;
+    hiscoreLine.hidden = false;
     overlayStats.innerHTML = `
       <div><span>Score</span><strong>${Math.floor(game.score)}</strong></div>
       <div><span>Wave</span><strong>${game.wave}</strong></div>

@@ -204,6 +204,10 @@ h1 {
   font-size: 11px;
 }
 
+[hidden] {
+  display: none !important;
+}
+
 .help {
   display: grid;
   grid-template-columns: 1fr 1fr;

@@ -70,7 +70,7 @@ export function collectScore(combo) {
 }
 
 export function lightDrainPerSecond(wave) {
-  return 3.15 + wave * 0.38;
+  return 2.45 + wave * 0.28;
 }
 
 export function visibilityAt(px, py, x, y, radius) {
