@@ -50,6 +50,7 @@ Players take turns placing marks on a 5×5 board. The first player to get three 
 - Two humans taking turns on the same screen
 - Click or tap a cell to place a mark
 - Water-drop sound when X is placed, drum sound when O is placed
+- Short trumpet fanfare when a player wins
 - Win and draw detection
 - Restart (X goes first)
 
@@ -92,4 +93,4 @@ The first version is done when the game is built locally, opened in a browser, a
 - First version is two humans on the same screen; no computer opponent.
 - After Restart, X always goes first.
 - It will be built locally and run in the browser.
-- v1 is only board, turns, win/draw, and restart — nothing else.
+- v1 is board, turns, win/draw, restart, move sounds (water drop for X, drum for O), and a trumpet fanfare on a win.
