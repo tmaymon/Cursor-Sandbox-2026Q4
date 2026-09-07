@@ -1,0 +1,104 @@
+:root {
+  --bg: #0f172a;
+  --panel: #1e293b;
+  --line: #334155;
+  --text: #e2e8f0;
+  --muted: #94a3b8;
+  --x: #38bdf8;
+  --o: #f472b6;
+  --win: #4ade80;
+  --hover: #334155;
+}
+
+* {
+  box-sizing: border-box;
+}
+
+body {
+  margin: 0;
+  min-height: 100vh;
+  display: grid;
+  place-items: center;
+  font-family: "Segoe UI", system-ui, sans-serif;
+  background: var(--bg);
+  color: var(--text);
+}
+
+.app {
+  width: min(92vw, 28rem);
+  text-align: center;
+}
+
+h1 {
+  margin: 0 0 0.25rem;
+  font-size: 1.75rem;
+  font-weight: 700;
+}
+
+.subtitle {
+  margin: 0 0 1.25rem;
+  color: var(--muted);
+}
+
+.status {
+  margin: 0 0 1rem;
+  min-height: 1.5rem;
+  font-size: 1.125rem;
+  font-weight: 600;
+}
+
+.status.win {
+  color: var(--win);
+}
+
+.board {
+  display: grid;
+  grid-template-columns: repeat(5, 1fr);
+  gap: 0.4rem;
+  padding: 0.6rem;
+  background: var(--panel);
+  border-radius: 0.9rem;
+  margin-bottom: 1.25rem;
+}
+
+.cell {
+  aspect-ratio: 1;
+  border: 0;
+  border-radius: 0.45rem;
+  background: var(--bg);
+  color: var(--text);
+  font-size: clamp(1.25rem, 5vw, 1.75rem);
+  font-weight: 700;
+  cursor: pointer;
+}
+
+.cell:hover:not(:disabled) {
+  background: var(--hover);
+}
+
+.cell:disabled {
+  cursor: default;
+}
+
+.cell.mark-x {
+  color: var(--x);
+}
+
+.cell.mark-o {
+  color: var(--o);
+}
+
+#restart {
+  border: 0;
+  border-radius: 999px;
+  padding: 0.65rem 1.4rem;
+  font-size: 1rem;
+  font-weight: 600;
+  color: var(--bg);
+  background: var(--text);
+  cursor: pointer;
+}
+
+#restart:hover {
+  filter: brightness(0.92);
+}

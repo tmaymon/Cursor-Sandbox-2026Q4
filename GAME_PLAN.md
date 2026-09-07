@@ -1,6 +1,6 @@
 # Tic Tac Toe — Game Plan
 
-A simple two-player game on a 5×5 grid, played in the browser. This document is a plan only; no game code yet.
+A simple two-player game on a 5×5 grid, played in the browser. Implemented as a local HTML/CSS/JS page (`index.html`).
 
 ## Goal
 
