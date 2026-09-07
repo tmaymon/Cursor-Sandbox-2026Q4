@@ -19,7 +19,7 @@ Players take turns placing marks on a 5×5 board. The first player to get three 
 - A 5×5 grid (25 cells)
 - Each cell is empty, X, or O
 - The board starts empty
-- Edges wrap around: a line that goes off one edge continues on the opposite edge (horizontal, vertical, and both diagonals)
+- Edges do not wrap around: a line that goes off one edge does not continue on the opposite edge
 
 ## Rules
 
@@ -29,7 +29,7 @@ Players take turns placing marks on a 5×5 board. The first player to get three 
    - horizontal (in any row)
    - vertical (in any column)
    - diagonal (usual 45° neighbor lines only, either direction)
-   The three marks must be adjacent with no gaps. `X X X` wins; `X _ X X` does not. Four or five in a row also wins, because it contains three. The three marks do not need to span the full board. A line may wrap around opposite edges.
+   The three marks must be adjacent with no gaps. `X X X` wins; `X _ X X` does not. Four or five in a row also wins, because it contains three. The three marks do not need to span the full board. A line that goes off one edge does not continue on the opposite edge.
 4. The game **ends on the first 3-in-a-row**. The player who just completed it wins immediately, even if cells are still empty. A game can end as early as X’s third move. A full-board draw is possible but rare.
 5. A **draw** happens when all 25 cells are filled and nobody has won.
 6. After a win or draw, no further marks can be placed. Players can start a new game. Restart clears the board and X goes first.
@@ -48,7 +48,7 @@ Players take turns placing marks on a 5×5 board. The first player to get three 
 - Browser page
 - Two humans taking turns on the same screen
 - Click or tap a cell to place a mark
-- Win and draw detection (including wrap-around lines)
+- Win and draw detection
 - Restart (X goes first)
 
 **Out (for later, if we want it)**
@@ -64,7 +64,7 @@ Players take turns placing marks on a 5×5 board. The first player to get three 
 1. Draw an empty 5×5 board in the browser
 2. Handle a click on an empty cell and place X or O
 3. Switch turns after a valid move
-4. Detect win (including wrap-around) and draw
+4. Detect win and draw
 5. Show the result and disable further moves
 6. Add a restart control that clears the board and lets X start
 
@@ -76,7 +76,7 @@ The first version is done when two people can play a full game in the browser, s
 
 - Three in a row means three **adjacent** marks with no gaps.
 - Four or five in a row still wins, because it contains three.
-- Lines **wrap around** opposite edges.
+- Lines do **not** wrap around opposite edges.
 - Diagonals are only the usual 45° neighbor lines, not other shapes.
 - The game ends on the first 3-in-a-row, even if the board is not full.
 - First version is two humans on the same screen; no computer opponent.
