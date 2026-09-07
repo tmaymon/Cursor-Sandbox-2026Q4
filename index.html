@@ -1,0 +1,69 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover" />
+    <title>Lumen Drift</title>
+    <meta name="description" content="Arcade survival in a dark nebula. Your light is all that remains." />
+    <link rel="icon" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 64 64'%3E%3Ccircle cx='32' cy='32' r='28' fill='%2304050a' stroke='%236ee7ff' stroke-width='3'/%3E%3Ccircle cx='32' cy='32' r='8' fill='%23ffe08a'/%3E%3C/svg%3E" />
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link href="https://fonts.googleapis.com/css2?family=Orbitron:wght@600;700&family=Outfit:wght@400;500;600&display=swap" rel="stylesheet" />
+    <link rel="stylesheet" href="css/style.css" />
+  </head>
+  <body>
+    <div id="app">
+      <canvas id="game" aria-label="Lumen Drift playfield"></canvas>
+      <div class="grain" aria-hidden="true"></div>
+      <button id="mute-btn" type="button">Sound on</button>
+
+      <div id="hud" class="hidden">
+        <div class="hud-top">
+          <div class="stat">
+            <span>Score</span>
+            <strong id="score">0</strong>
+          </div>
+          <div id="combo"></div>
+          <div class="stat" style="text-align: right">
+            <span>Wave</span>
+            <strong id="wave">1</strong>
+          </div>
+        </div>
+        <div class="hud-bottom">
+          <div class="light-wrap">
+            <span>Light</span>
+            <div class="light-bar"><div id="light-fill"></div></div>
+            <div class="legend">WASD / arrows to drift · hold click to chase the cursor · space to dash · P to pause</div>
+          </div>
+          <div class="stat" style="text-align: right">
+            <span>Time</span>
+            <strong id="time">0:00</strong>
+          </div>
+        </div>
+      </div>
+
+      <div id="overlay">
+        <div class="panel">
+          <p class="kicker">Nebula well</p>
+          <h1 id="overlay-title">Lumen Drift</h1>
+          <p class="tag" id="overlay-tag">Your light is all that remains.</p>
+          <p class="hiscore" id="hiscore-line">Best glow <strong data-hiscore>0</strong></p>
+          <div id="overlay-stats" hidden></div>
+          <div class="help" id="overlay-help">
+            <div><b>Drift</b> with WASD or arrows</div>
+            <div><b>Chase</b> by holding the mouse</div>
+            <div><b>Dash</b> with space or shift</div>
+            <div><b>Feed</b> on gold motes to keep the light</div>
+            <div><b>Dodge</b> rocks and pink seekers</div>
+            <div><b>Bloom</b> every 5-hit combo</div>
+          </div>
+          <div class="actions">
+            <button id="primary-btn" class="primary" type="button">Begin</button>
+            <button id="secondary-btn" type="button" hidden>Restart</button>
+          </div>
+        </div>
+      </div>
+    </div>
+    <script type="module" src="js/main.js"></script>
+  </body>
+</html>
