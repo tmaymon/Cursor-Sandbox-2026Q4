@@ -1,0 +1,22 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <title>Tic Tac Toe — 5×5</title>
+    <link rel="stylesheet" href="styles.css" />
+  </head>
+  <body>
+    <main class="app">
+      <h1>Tic Tac Toe</h1>
+      <p class="subtitle">5×5 board · first to 3 in a row</p>
+      <p id="status" class="status" role="status" aria-live="polite">X’s turn</p>
+      <div id="board" class="board" role="grid" aria-label="Tic tac toe board"></div>
+      <button id="restart" type="button">Restart</button>
+      <audio id="sound-x" src="sounds/water-drop.wav" preload="auto"></audio>
+      <audio id="sound-o" src="sounds/drum.wav" preload="auto"></audio>
+      <audio id="sound-win" src="sounds/trumpet.wav" preload="auto"></audio>
+    </main>
+    <script src="game.js"></script>
+  </body>
+</html>
