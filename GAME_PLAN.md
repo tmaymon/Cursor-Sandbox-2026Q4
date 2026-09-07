@@ -27,7 +27,7 @@ Players take turns placing marks on a 5×5 board. The first player to get three 
    - horizontal (in any row)
    - vertical (in any column)
    - diagonal (either direction)
-   The three marks do not need to span the full board.
+   The three marks must be adjacent with no gaps. `X X X` wins; `X _ X X` does not. The three marks do not need to span the full board.
 4. A **draw** happens when all 25 cells are filled and nobody has won.
 5. After a win or draw, the game ends. Players can start a new game.
 
@@ -66,3 +66,7 @@ Players take turns placing marks on a 5×5 board. The first player to get three 
 ## Success
 
 The first version is done when two people can play a full game, see a correct winner or draw, and start over without refreshing the page.
+
+## Verified
+
+- Three in a row means three **adjacent** marks with no gaps.
