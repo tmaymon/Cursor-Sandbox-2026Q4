@@ -256,6 +256,10 @@ h1 {
   font-size: 13px;
 }
 
+.suggest[hidden] {
+  display: none;
+}
+
 .composer {
   background: var(--composer);
   border: 1px solid var(--line);
